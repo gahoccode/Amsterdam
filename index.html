@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Minh Tam - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      color: #000;
+      background-color: #fff;
+      line-height: 1.5;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1024px;
+      width: 100%;
+      margin: 0 auto;
+      background-color: #fff;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .resume {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+      .resume {
+        flex-direction: row;
+      }
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 100%;
+      background-color: #f3f4f6;
+      padding: 1.5rem;
+      min-height: 100vh;
+    }
+
+    @media (min-width: 768px) {
+      .sidebar {
+        width: 33.333%;
+      }
+    }
+
+    /* Main content */
+    .main-content {
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .main-content {
+        width: 66.667%;
+      }
+    }
+
+    /* Header */
+    .header-box {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 66.667%;
+      border: 4px solid #000;
+      padding: 1.5rem;
+      background-color: #fff;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .name {
+      font-size: 1.875rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .title {
+      color: #4b5563;
+      text-transform: uppercase;
+    }
+
+    /* Section styles */
+    .section {
+      margin-bottom: 2rem;
+      margin-top: 8rem;
+    }
+
+    .section:first-of-type {
+      margin-top: 8rem;
+    }
+
+    .section-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-bottom: 2px solid #000;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .detail-item {
+      margin-bottom: 1rem;
+    }
+
+    .detail-label {
+      font-weight: 600;
+    }
+
+    .detail-value {
+      color: #4b5563;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    /* Skills */
+    .skill-item {
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-name {
+      font-weight: 600;
+    }
+
+    .skill-dots {
+      display: flex;
+      gap: 0.25rem;
+      margin-top: 0.25rem;
+    }
+
+    .dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background-color: #000;
+    }
+
+    .dot-empty {
+      background-color: #d1d5db;
+    }
+
+    /* Employment history */
+    .job {
+      margin-bottom: 1.5rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.25rem;
+    }
+
+    .job-title {
+      font-weight: 600;
+    }
+
+    .job-date {
+      color: #4b5563;
+    }
+
+    /* Lists */
+    ul {
+      list-style-position: outside;
+      padding-left: 1.25rem;
+      margin-top: 0.25rem;
+    }
+
+    li {
+      color: #4b5563;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Icons */
+    .icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .container {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="resume">
+      <!-- Left Column - Sidebar -->
+      <div class="sidebar">
+        <div class="section">
+          <h2 class="section-title">DETAILS</h2>
+          <div class="detail-item">
+            <p class="detail-label">ADDRESS</p>
+            <p class="detail-value">District 4, HCMC, Vietnam</p>
+          </div>
+          <div class="detail-item">
+            <p class="detail-label">PHONE</p>
+            <div class="detail-value">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>0963639979</span>
+            </div>
+          </div>
+          <div class="detail-item">
+            <p class="detail-label">EMAIL</p>
+            <div class="detail-value">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>tamle.fpa@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">LINKS</h2>
+          <div class="detail-value">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span>GitHub Profile</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">SKILLS</h2>
+          <div class="skill-item">
+            <p class="skill-name">Excel</p>
+            <div class="skill-dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p class="skill-name">Financial Analysis</p>
+            <div class="skill-dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p class="skill-name">Programming Automation</p>
+            <div class="skill-dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot dot-empty"></div>
+              <div class="dot dot-empty"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p class="skill-name">Financial Accounting</p>
+            <div class="skill-dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot dot-empty"></div>
+              <div class="dot dot-empty"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">LANGUAGES</h2>
+          <div class="skill-item">
+            <p class="skill-name">Vietnamese</p>
+            <div class="skill-dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p class="skill-name">English</p>
+            <div class="skill-dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot dot-empty"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="main-content">
+        <div class="section">
+          <h2 class="section-title">PROFILE</h2>
+          <p style="color: #4b5563; margin-bottom: 1rem;">
+            Results-driven FP&A specialist delivering actionable financial insights that guide strategic
+            decision-making and drive business growth. Skilled in budgeting, forecasting, and financial modeling,
+            transforms complex data into clear, impactful reports. Proficient in Excel with foundational Python and
+            VBA skills for process automation, and a strong communicator in English who effectively conveys critical
+            information to management and leadership.
+          </p>
+          <ul>
+            <li>Develop and maintain financial models to support forecasting and budgeting</li>
+            <li>Analyze financial performance, identify trends, and provide actionable insights</li>
+            <li>Prepare monthly, quarterly, and annual financial reports for leadership</li>
+            <li>Conduct variance analysis to compare actual results vs. forecasts</li>
+            <li>Assist in scenario planning and long-term financial strategy</li>
+            <li>Partner with business units to optimize financial performance and efficiency</li>
+            <li>Identify areas for cost reduction and process improvement</li>
+            <li>Support ad-hoc financial analysis and special projects</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">EMPLOYMENT HISTORY</h2>
+
+          <div class="job">
+            <div class="job-header">
+              <h3 class="job-title">Finance Specialist, Phuong Nam General Hospital</h3>
+              <span class="job-date">Aug 2023 — Sep 2024</span>
+            </div>
+            <ul>
+              <li>Develop financial models to support strategic management and decision-making</li>
+              <li>Build and maintain reporting dashboards to monitor key metrics</li>
+              <li>Track financial KPIs and provide forecasts for future performance</li>
+              <li>Perform Budget Variance Analysis to identify areas for improvement</li>
+              <li>Collaborate with departments to collect financial and business data</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <h3 class="job-title">Stockbroker, Mirae Asset Securities</h3>
+              <span class="job-date">2018 — 2021</span>
+            </div>
+            <ul>
+              <li>Assessed clients' investment needs and risk tolerance</li>
+              <li>Assisted clients in identifying investment opportunities</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">EDUCATION</h2>
+
+          <div class="job">
+            <div class="job-header">
+              <h3 class="job-title">Bachelor of Science in Management, University of South Florida</h3>
+              <span class="job-date">2012 — 2015</span>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <h3 class="job-title">International Baccalaureate Diploma, EF Academy</h3>
+              <span class="job-date">2009 — 2011</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">CERTIFICATIONS</h2>
+
+          <div class="job">
+            <div class="job-header">
+              <h3 class="job-title">FPAC Candidate, AFP (Association for Financial Professionals)</h3>
+              <span class="job-date">Expected: 2025</span>
+            </div>
+            <p style="color: #4b5563;">
+              Comprehensive certification covering financial planning, analysis, and strategic business partnering
+            </p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">ACHIEVEMENTS</h2>
+
+          <ul>
+            <li>Automated reporting processes, saving 50 hours/month</li>
+            <li>Redesigned financial data structure, improving collaboration and saving 15 hours/month</li>
+            <li>Developed KPI dashboards contributing to 30% month-over-month revenue growth</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PROJECTS</h2>
+
+          <div class="job">
+            <h3 class="job-title">Hospital Information System (HIS) Implementation</h3>
+            <p style="color: #4b5563;">Role: PMO</p>
+            <p style="color: #4b5563;">
+              Assisted in User Acceptance Testing (UAT) for HIS financial reporting module
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centered Name Box -->
+    <div class="header-box">
+      <h1 class="name">LE MINH TAM</h1>
+      <p class="title">FP&A SPECIALIST</p>
+    </div>
+  </div>
+</body>
+</html>
