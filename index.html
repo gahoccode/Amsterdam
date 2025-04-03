@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <title>Le Minh Tam - Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -20,6 +21,10 @@
       color: #000;
       background-color: #fff;
       line-height: 1.5;
+      font-size: 16px;
+      text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
     }
 
     /* Layout */
@@ -30,6 +35,8 @@
       background-color: #fff;
       position: relative;
       min-height: 100vh;
+      overflow-x: hidden;
+      padding: 0 10px;
     }
 
     .resume {
@@ -48,12 +55,20 @@
       width: 100%;
       background-color: #f3f4f6;
       padding: 1.5rem;
+      padding-top: 2rem;
       min-height: 100vh;
+      position: relative;
     }
 
     @media (min-width: 768px) {
       .sidebar {
         width: 33.333%;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .sidebar {
+        min-height: auto;
       }
     }
 
@@ -80,7 +95,15 @@
       padding: 1.5rem;
       background-color: #fff;
       text-align: center;
-      z-index: 10;
+      z-index: 5;
+      max-width: calc(100% - 2rem);
+    }
+    
+    @media (max-width: 767px) {
+      .header-box {
+        width: 90%;
+        padding: 1rem;
+      }
     }
 
     .name {
@@ -89,6 +112,12 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       margin-bottom: 0.5rem;
+    }
+    
+    @media (max-width: 480px) {
+      .name {
+        font-size: 1.5rem;
+      }
     }
 
     .title {
@@ -100,10 +129,22 @@
     .section {
       margin-bottom: 2rem;
       margin-top: 8rem;
+      position: relative;
+      z-index: 1;
     }
 
     .section:first-of-type {
-      margin-top: 8rem;
+      margin-top: 10rem;
+    }
+    
+    @media (max-width: 767px) {
+      .section {
+        margin-top: 2rem;
+      }
+      
+      .section:first-of-type {
+        margin-top: 8rem;
+      }
     }
 
     .section-title {
@@ -165,6 +206,14 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 0.25rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    @media (max-width: 480px) {
+      .job-header {
+        flex-direction: column;
+      }
     }
 
     .job-title {
@@ -195,6 +244,27 @@
       fill: currentColor;
     }
 
+    /* Touch device optimizations */
+    @media (hover: none) {
+      a, button, .detail-value {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+    
+    /* Small screen optimizations */
+    @media (max-width: 360px) {
+      body {
+        font-size: 14px;
+      }
+      
+      .sidebar, .main-content {
+        padding: 1rem;
+      }
+    }
+    
     /* Print styles */
     @media print {
       body {
